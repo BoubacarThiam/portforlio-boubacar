@@ -1,0 +1,138 @@
+/* ==============================================
+   responsive.css — Media queries responsive
+   Portfolio Boubacar Thiam
+   ============================================== */
+
+/* ---- Tablette & desktop étroit (< 900px) ---- */
+@media (max-width: 900px) {
+
+  /* Navigation : masquer liens, afficher burger */
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  /* Hero : le texte couvre toute la largeur, la scène 3D reste en fond
+     mais s'assombrit davantage pour rester lisible derrière le texte */
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-spline {
+    opacity: 0.55;
+  }
+
+  .hero-visual::before {
+    background:
+      linear-gradient(180deg, rgba(9, 9, 14, 0.75) 0%, rgba(9, 9, 14, 0.88) 100%),
+      linear-gradient(to top, var(--bg) 0%, transparent 18%);
+  }
+
+  /* À propos : colonne unique */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Avatar centré en mobile */
+  .about-avatar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-avatar-frame {
+    max-width: 260px;
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Compétences : colonne unique */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Projets : colonne unique (visuel au-dessus) */
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual {
+    min-height: 180px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Contact : colonne unique */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Footer : empilé */
+  .footer-inner {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+/* ---- Mobile (< 600px) ---- */
+@media (max-width: 600px) {
+
+  /* Espacement réduit */
+  .section {
+    padding: 72px 0;
+  }
+
+  /* Hero stats en colonne */
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Boutons hero plein largeur */
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Cards about en colonne */
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Formulaire : champs prénom/nom en colonne */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Projets : padding réduit */
+  .project-content {
+    padding: 24px;
+  }
+
+  /* Titre hero plus petit */
+  .hero-name {
+    font-size: clamp(2.4rem, 10vw, 4rem);
+  }
+}
+
+/* ---- Très petit écran (< 380px) ---- */
+@media (max-width: 380px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+}

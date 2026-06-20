@@ -1,0 +1,220 @@
+/* ==============================================
+   about.css — Section À propos
+   Portfolio Boubacar Thiam
+   ============================================== */
+
+#about {
+  background: var(--bg2);
+}
+
+/* --- Grille principale --- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* --- Avatar / Photo --- */
+.about-avatar {
+  position: relative;
+}
+
+.about-avatar-frame {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 3 / 4;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cadre intérieur décoratif */
+.about-avatar-frame::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: calc(var(--radius-lg) - 4px);
+  pointer-events: none;
+}
+
+/* Placeholder si pas de photo */
+.avatar-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 40px;
+}
+
+.avatar-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gold-dim);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* Lueur décorative */
+.about-avatar::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: var(--gold-dim);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+/* Effet hover sur la photo */
+.about-avatar-frame img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
+  filter: grayscale(10%);
+}
+
+.about-avatar-frame:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+/* --- Contenu texte --- */
+.about-content {
+  padding-top: 8px;
+}
+
+.about-bio {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.about-bio p + p {
+  margin-top: 16px;
+}
+
+.about-bio strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* --- Timeline --- */
+.timeline {
+  margin-top: 40px;
+}
+
+.timeline-title {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 28px;
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 16px;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-dot {
+  width: 13px;
+  height: 13px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 2px solid var(--bg2);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.timeline-year {
+  font-size: 0.72rem;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.timeline-heading {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.timeline-sub {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+/* --- Cards résumé --- */
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.about-card {
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.about-card:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  background: var(--surface2);
+}
+
+.about-card-icon {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.about-card-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.about-card-text {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}

@@ -1,0 +1,31 @@
+/* ==============================================
+   spotlight.css — Effet de lueur au curseur
+   Adaptation vanilla JS/CSS du composant
+   "Spotlight" (React/shadcn) pour le hero 3D.
+   Portfolio Boubacar Thiam
+   ============================================== */
+
+.spotlight {
+  position: absolute;
+  z-index: 3;
+  top: var(--spot-y, 50%);
+  left: var(--spot-x, 50%);
+  width: 480px;
+  height: 480px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(232, 200, 122, 0.16) 0%,
+    rgba(201, 168, 76, 0.06) 45%,
+    transparent 75%
+  );
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-visual.spotlight-active .spotlight {
+  opacity: 1;
+}

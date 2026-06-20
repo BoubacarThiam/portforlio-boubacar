@@ -1,0 +1,136 @@
+/* ==============================================
+   projects.css — Section Projets
+   Portfolio Boubacar Thiam
+   ============================================== */
+
+#projects {
+  background: var(--bg2);
+}
+
+/* --- Liste des projets --- */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- Carte projet --- */
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  border-color: rgba(201, 168, 76, 0.25);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-4px);
+}
+
+/* --- Zone visuelle / mockup --- */
+.project-visual {
+  background: var(--bg3);
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fonds uniques par projet */
+.project-visual-1 { background: linear-gradient(135deg, #0f0f17 0%, #1a1420 100%); }
+.project-visual-2 { background: linear-gradient(135deg, #0a130f 0%, #101a14 100%); }
+.project-visual-3 { background: linear-gradient(135deg, #0a0d1a 0%, #10131e 100%); }
+.project-visual-4 { background: linear-gradient(135deg, #140f0a 0%, #1a1210 100%); }
+
+.project-mockup {
+  width: 80%;
+  max-width: 220px;
+  position: relative;
+}
+
+/* --- Contenu texte --- */
+.project-content {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.project-number {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  font-weight: 300;
+  flex-grow: 1;
+}
+
+.project-desc strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Tags techno */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+/* Pied de carte */
+.project-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  transition: var(--transition);
+}
+
+.project-link:hover {
+  gap: 10px;
+}
+
+.project-link svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}

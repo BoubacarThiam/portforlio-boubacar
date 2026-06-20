@@ -1,0 +1,156 @@
+/* ==============================================
+   contact.css — Section Contact & Formulaire
+   Portfolio Boubacar Thiam
+   ============================================== */
+
+#contact {
+  background: var(--bg);
+}
+
+/* --- Wrapper principal --- */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* --- Colonne infos --- */
+.contact-info-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.contact-info-desc {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  font-weight: 300;
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+/* --- Liens de contact --- */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-link-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+  color: var(--text-mid);
+  font-size: 0.88rem;
+}
+
+.contact-link-item:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  color: var(--text);
+  transform: translateX(4px);
+}
+
+.contact-link-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--gold-dim);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.contact-link-label {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  display: block;
+}
+
+.contact-link-value {
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* --- Formulaire --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 300;
+  transition: var(--transition);
+  outline: none;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(201, 168, 76, 0.5);
+  box-shadow: 0 0 0 3px var(--gold-dim);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-dim);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Bouton submit */
+.form-submit-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+/* Message de succès */
+.form-success {
+  display: none;
+  padding: 14px 18px;
+  background: rgba(0, 229, 100, 0.1);
+  border: 1px solid rgba(0, 229, 100, 0.25);
+  border-radius: var(--radius-sm);
+  color: #4ade80;
+  font-size: 0.88rem;
+  text-align: center;
+}

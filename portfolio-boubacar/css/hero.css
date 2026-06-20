@@ -1,0 +1,262 @@
+/* ==============================================
+   hero.css — Section Hero (page d'accueil)
+   Portfolio Boubacar Thiam
+   ============================================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 70px;
+  background: var(--bg);
+}
+
+/* Radial glow de fond */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Grille décorative */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 80% 50%, transparent 40%, black 100%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Contenu hero */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+/* --- Scène 3D en arrière-plan plein écran du hero --- */
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #050507;
+}
+
+.hero-spline {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: brightness(1.6) contrast(1.08);
+}
+
+/* --- Fallback : si la 3D ne charge pas (WebGL absent, script bloqué) --- */
+.hero-visual.fallback .hero-spline,
+.hero-visual.fallback .hero-spline-loader {
+  display: none;
+}
+
+.hero-visual.fallback::before {
+  background:
+    radial-gradient(circle at 78% 30%, rgba(201, 168, 76, 0.22) 0%, transparent 42%),
+    radial-gradient(circle at 62% 78%, rgba(232, 200, 122, 0.14) 0%, transparent 48%),
+    linear-gradient(100deg, var(--bg) 0%, rgba(9, 9, 14, 0.6) 30%, rgba(9, 9, 14, 0.2) 50%, transparent 65%);
+  animation: fallbackPulse 6s ease-in-out infinite;
+}
+
+@keyframes fallbackPulse {
+  0%, 100% { opacity: 0.85; }
+  50%      { opacity: 1; }
+}
+
+/* Dégradé de lisibilité : assombrit la zone du texte, laisse respirer la scène 3D ailleurs */
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(100deg, var(--bg) 0%, rgba(9, 9, 14, 0.82) 20%, rgba(9, 9, 14, 0.35) 38%, transparent 55%),
+    linear-gradient(to top, rgba(9, 9, 14, 0.7) 0%, transparent 22%);
+  pointer-events: none;
+}
+
+/* Masque le watermark Spline en bas à droite */
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 190px;
+  height: 56px;
+  background: #050507;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-spline-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.loader {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Badge disponibilité */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  margin-bottom: 32px;
+  animation: fadeDown 0.8s ease both;
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Nom principal */
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 8px;
+  animation: fadeUp 0.9s ease 0.15s both;
+}
+
+.hero-name span {
+  display: block;
+  background: linear-gradient(100deg, var(--gold) 0%, var(--gold-light) 35%, var(--gold) 60%, var(--gold-light) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: -200% center; }
+}
+
+/* Rôle */
+.hero-role {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  color: var(--text-mid);
+  margin-bottom: 28px;
+  animation: fadeUp 0.9s ease 0.25s both;
+}
+
+/* Description */
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  max-width: 520px;
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 44px;
+  animation: fadeUp 0.9s ease 0.35s both;
+}
+
+.hero-desc strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Boutons d'action */
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.9s ease 0.45s both;
+}
+
+/* Indicateur de scroll */
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: fadeUp 1s ease 0.8s both;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+/* Stats */
+.hero-stats {
+  display: flex;
+  gap: 36px;
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+  animation: fadeUp 0.9s ease 0.55s both;
+}
+
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+  letter-spacing: 0.03em;
+}

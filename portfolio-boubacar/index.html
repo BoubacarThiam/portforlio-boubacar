@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Boubacar Thiam – Développeur Web Junior basé au Sénégal. Spécialisé en HTML, CSS, JavaScript, PHP et MySQL. Disponible pour stage, freelance ou emploi." />
+  <meta name="keywords" content="développeur web, Sénégal, HTML, CSS, JavaScript, PHP, MySQL, Python, portfolio, junior" />
+  <meta name="author" content="Boubacar Thiam" />
+  <meta property="og:title" content="Boubacar Thiam | Développeur Web" />
+  <meta property="og:description" content="Portfolio de Boubacar Thiam – Développeur Web Junior passionné basé au Sénégal." />
+  <meta property="og:type" content="website" />
+  <title>Boubacar Thiam | Développeur Web Junior</title>
+
+  <!-- Google Fonts : Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/spotlight.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Spline 3D — web component sans framework (remplace le besoin de React) -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</head>
+<body>
+
+  <!-- ==============================
+       NAVIGATION
+  ============================== -->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">BT<span>.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menu mobile -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu mobile">
+    <a href="#about"    onclick="closeMobile()">À propos</a>
+    <a href="#skills"   onclick="closeMobile()">Compétences</a>
+    <a href="#projects" onclick="closeMobile()">Projets</a>
+    <a href="#contact"  onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <!-- Scène 3D interactive en arrière-plan + effet spotlight au curseur -->
+    <div class="hero-visual" id="heroVisual" aria-hidden="true">
+      <div class="spotlight" id="heroSpotlight"></div>
+      <spline-viewer
+        class="hero-spline"
+        url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+        loading-anchor="center"
+      ></spline-viewer>
+      <div class="hero-spline-loader"><span class="loader"></span></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Disponible pour stage &amp; freelance — Sénégal
+        </div>
+
+        <h1 class="hero-name">
+          Boubacar<span>Thiam.</span>
+        </h1>
+
+        <p class="hero-role">Développeur Web Junior &mdash; Full Stack</p>
+
+        <p class="hero-desc">
+          Je <strong>construis des applications web modernes</strong> qui allient performance et expérience utilisateur. Passionné par le code propre et les solutions qui font la différence.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M2 12l10-8 10 8"/><path d="M5 9.5V19a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V9.5"/>
+            </svg>
+            Voir mes projets
+          </a>
+          <a href="#contact" class="btn btn-outline">Me contacter</a>
+        </div>
+
+        <div class="hero-stats" aria-label="Résumé statistiques">
+          <div class="hero-stat">
+            <div class="hero-stat-num">4+</div>
+            <div class="hero-stat-label">Projets réalisés</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">5+</div>
+            <div class="hero-stat-label">Technologies</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">2</div>
+            <div class="hero-stat-label">Ans de formation</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       À PROPOS
+  ============================== -->
+  <section class="section" id="about" aria-label="À propos">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Avatar -->
+        <div class="about-avatar reveal">
+          <div class="about-avatar-frame">
+            <img
+              src="assets/photo.jpg"
+              alt="Boubacar Thiam — Développeur Web Junior"
+              style="width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:inherit;"
+            />
+          </div>
+        </div>
+
+        <!-- Contenu -->
+        <div class="about-content reveal">
+          <div class="section-label">À propos</div>
+          <h2 class="section-title">Passionné par le<span> web</span>,<br/>motivé par les défis.</h2>
+
+          <div class="about-bio">
+            <p>
+              Développeur web junior <strong>passionné par la création d'applications modernes et performantes</strong>.
+              Solide expérience académique dans le développement d'applications web (frontend et backend),
+              avec une bonne maîtrise de Python, PHP, JavaScript et MySQL.
+            </p>
+            <p>
+              <strong>Motivé, rigoureux et toujours en quête d'amélioration continue</strong>, je cherche à
+              mettre mes compétences au service d'un projet ambitieux — stage, freelance ou CDI.
+            </p>
+          </div>
+
+          <!-- Timeline -->
+          <div class="timeline" aria-label="Parcours académique">
+            <div class="timeline-title">Parcours</div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div>
+                <div class="timeline-year">En cours</div>
+                <div class="timeline-heading">Informatique Appliquée à la Gestion</div>
+                <div class="timeline-sub">Formation supérieure — Sénégal</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div>
+                <div class="timeline-year">Académique</div>
+                <div class="timeline-heading">Projets fullstack PHP / Python</div>
+                <div class="timeline-sub">Développement web, bases de données, algorithmique</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div>
+                <div class="timeline-year">Objectif</div>
+                <div class="timeline-heading">Stage / Emploi / Freelance</div>
+                <div class="timeline-sub">Disponible, mobile, prêt à apprendre</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards -->
+          <div class="about-cards">
+            <div class="about-card">
+              <div class="about-card-icon" aria-hidden="true">🎯</div>
+              <div class="about-card-title">Objectif</div>
+              <div class="about-card-text">Intégrer une équipe pour monter en compétences et livrer des projets concrets</div>
+            </div>
+            <div class="about-card">
+              <div class="about-card-icon" aria-hidden="true">📍</div>
+              <div class="about-card-title">Localisation</div>
+              <div class="about-card-text">Sénégal — ouvert au télétravail et aux missions à distance</div>
+            </div>
+            <div class="about-card">
+              <div class="about-card-icon" aria-hidden="true">⚡</div>
+              <div class="about-card-title">Méthode</div>
+              <div class="about-card-text">Code propre, structuré et orienté solution utilisateur</div>
+            </div>
+            <div class="about-card">
+              <div class="about-card-icon" aria-hidden="true">📚</div>
+              <div class="about-card-title">En apprentissage</div>
+              <div class="about-card-text">React.js, Node.js, Git avancé, bonnes pratiques DevWeb</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ==============================
+       COMPÉTENCES
+  ============================== -->
+  <section class="section" id="skills" aria-label="Compétences">
+    <div class="container">
+      <div class="section-label">Compétences</div>
+      <h2 class="section-title">Les outils de <span>mon atelier</span></h2>
+      <p class="section-desc">Technologies maîtrisées à travers des projets académiques et personnels.</p>
+
+      <div class="skills-grid" id="skillsGrid">
+
+        <div class="skill-row reveal">
+          <div class="skill-top">
+            <div class="skill-name"><span class="skill-emoji" aria-hidden="true">🌐</span> HTML / CSS</div>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+
+        <div class="skill-row reveal">
+          <div class="skill-top">
+            <div class="skill-name"><span class="skill-emoji" aria-hidden="true">⚙️</span> JavaScript</div>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+        </div>
+
+        <div class="skill-row reveal">
+          <div class="skill-top">
+            <div class="skill-name"><span class="skill-emoji" aria-hidden="true">🐘</span> PHP</div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+        </div>
+
+        <div class="skill-row reveal">
+          <div class="skill-top">
+            <div class="skill-name"><span class="skill-emoji" aria-hidden="true">🗄️</span> MySQL</div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+        </div>
+
+        <div class="skill-row reveal">
+          <div class="skill-top">
+            <div class="skill-name"><span class="skill-emoji" aria-hidden="true">🐍</span> Python</div>
+            <span class="skill-pct">60%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+        </div>
+
+        <div class="skill-row reveal">
+          <div class="skill-top">
+            <div class="skill-name"><span class="skill-emoji" aria-hidden="true">⚛️</span> React (apprentissage)</div>
+            <span class="skill-pct">40%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-width="40"></div></div>
+        </div>
+
+      </div>
+
+      <div class="skills-tools reveal">
+        <p class="skills-tools-title">Outils &amp; environnements</p>
+        <div class="tools-list" role="list">
+          <span class="tool-chip" role="listitem">🔧 Git &amp; GitHub</span>
+          <span class="tool-chip" role="listitem">🖥️ VS Code</span>
+          <span class="tool-chip" role="listitem">🐧 Linux / CLI</span>
+          <span class="tool-chip" role="listitem">📦 WAMP / XAMPP</span>
+          <span class="tool-chip" role="listitem">🎨 Figma (bases)</span>
+          <span class="tool-chip" role="listitem">📊 PHPMyAdmin</span>
+          <span class="tool-chip" role="listitem">📐 CSS Flexbox &amp; Grid</span>
+          <span class="tool-chip" role="listitem">🔍 Web Scraping</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ==============================
+       PROJETS
+  ============================== -->
+  <section class="section" id="projects" aria-label="Projets">
+    <div class="container">
+      <div class="section-label">Projets</div>
+      <h2 class="section-title">Ce que j'ai <span>construit</span></h2>
+      <p class="section-desc">Des projets concrets, pensés pour résoudre de vrais problèmes.</p>
+
+      <div class="projects-list">
+
+        <!-- Projet 1 -->
+        <article class="project-card reveal" aria-label="Système de Gestion de Tontine">
+          <div class="project-visual project-visual-1" aria-hidden="true">
+            <svg class="project-mockup" viewBox="0 0 220 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="200" height="150" rx="8" fill="#1a1420" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+              <rect x="20" y="20" width="180" height="28" rx="4" fill="#251d30"/>
+              <text x="32" y="39" font-size="11" fill="#c9a84c" font-family="monospace">💰 Gestion Tontine</text>
+              <rect x="20" y="56" width="80" height="40" rx="4" fill="#1e1828"/>
+              <text x="28" y="72" font-size="7" fill="#9898b0">Membres</text>
+              <text x="28" y="87" font-size="16" fill="#c9a84c" font-family="monospace" font-weight="bold">12</text>
+              <rect x="110" y="56" width="90" height="40" rx="4" fill="#1e1828"/>
+              <text x="118" y="72" font-size="7" fill="#9898b0">Cotisations</text>
+              <text x="118" y="87" font-size="14" fill="#e8c87a" font-family="monospace" font-weight="bold">480k</text>
+              <rect x="20" y="104" width="180" height="1" fill="rgba(255,255,255,0.07)"/>
+              <rect x="20" y="112" width="180" height="8" rx="2" fill="#251d30"/>
+              <rect x="20" y="112" width="130" height="8" rx="2" fill="rgba(201,168,76,0.35)"/>
+              <rect x="20" y="126" width="180" height="8" rx="2" fill="#251d30"/>
+              <rect x="20" y="126" width="90" height="8" rx="2" fill="rgba(201,168,76,0.2)"/>
+              <rect x="20" y="140" width="180" height="8" rx="2" fill="#251d30"/>
+              <rect x="20" y="140" width="155" height="8" rx="2" fill="rgba(201,168,76,0.45)"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-number">Projet 01</div>
+              <h3 class="project-title">Système de Gestion de Tontine</h3>
+              <p class="project-desc">
+                <strong>Problème :</strong> Les tontines (épargne communautaire) sont souvent gérées manuellement, sources d'erreurs et de conflits.<br/><br/>
+                <strong>Solution :</strong> Une application Python en console pour gérer les membres, cotisations, paiements et rotation des bénéficiaires — avec persistance des données.
+              </p>
+              <div class="project-tech">
+                <span class="tag">Python</span>
+                <span class="tag">POO</span>
+                <span class="tag">JSON</span>
+                <span class="tag">CLI</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/boubacarthiam005" target="_blank" rel="noopener noreferrer" class="project-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                Voir sur GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projet 2 -->
+        <article class="project-card reveal" aria-label="Web Scraping Python">
+          <div class="project-visual project-visual-2" aria-hidden="true">
+            <svg class="project-mockup" viewBox="0 0 220 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="200" height="150" rx="8" fill="#0f1a12" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+              <rect x="10" y="20" width="200" height="18" rx="4" fill="#111d12"/>
+              <circle cx="24" cy="29" r="4" fill="#ff5f57"/>
+              <circle cx="36" cy="29" r="4" fill="#febc2e"/>
+              <circle cx="48" cy="29" r="4" fill="#28c840"/>
+              <rect x="60" y="24" width="120" height="10" rx="3" fill="#1a2b1c"/>
+              <text x="70" y="32" font-size="7" fill="#5a7a5c">https://exemple.com/data</text>
+              <rect x="10" y="46" width="200" height="114" rx="0" fill="#0d1a0f"/>
+              <text x="18" y="62" font-size="8" fill="#4ade80" font-family="monospace">import requests, BeautifulSoup</text>
+              <text x="18" y="76" font-size="8" fill="#9898b0" font-family="monospace">url = "https://target.com"</text>
+              <text x="18" y="90" font-size="8" fill="#9898b0" font-family="monospace">soup = BeautifulSoup(r.text)</text>
+              <text x="18" y="104" font-size="8" fill="#c9a84c" font-family="monospace">data = soup.find_all('div')</text>
+              <text x="18" y="118" font-size="8" fill="#4ade80" font-family="monospace">✓ 142 éléments extraits</text>
+              <text x="18" y="132" font-size="8" fill="#4ade80" font-family="monospace">✓ Export CSV réussi</text>
+            </svg>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-number">Projet 02</div>
+              <h3 class="project-title">Web Scraping automatisé</h3>
+              <p class="project-desc">
+                <strong>Problème :</strong> Collecter et structurer manuellement des données en ligne est fastidieux et non scalable.<br/><br/>
+                <strong>Solution :</strong> Un script Python utilisant BeautifulSoup et Requests pour extraire, nettoyer et exporter automatiquement des données web au format CSV.
+              </p>
+              <div class="project-tech">
+                <span class="tag">Python</span>
+                <span class="tag">BeautifulSoup</span>
+                <span class="tag">Requests</span>
+                <span class="tag">CSV</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/boubacarthiam005" target="_blank" rel="noopener noreferrer" class="project-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                Voir sur GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projet 3 -->
+        <article class="project-card reveal" aria-label="Gestion PME Fullstack">
+          <div class="project-visual project-visual-3" aria-hidden="true">
+            <svg class="project-mockup" viewBox="0 0 220 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="200" height="150" rx="8" fill="#10131e" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+              <rect x="10" y="10" width="50" height="150" rx="8" fill="#0d1020"/>
+              <rect x="18" y="28" width="34" height="6" rx="3" fill="#c9a84c" opacity="0.8"/>
+              <rect x="18" y="42" width="34" height="6" rx="3" fill="#2a2a3e"/>
+              <rect x="18" y="56" width="34" height="6" rx="3" fill="#2a2a3e"/>
+              <rect x="18" y="70" width="34" height="6" rx="3" fill="#2a2a3e"/>
+              <rect x="68" y="20" width="130" height="16" rx="4" fill="#1a1d2e"/>
+              <text x="74" y="31" font-size="8" fill="#e8e8f0" font-family="monospace">📦 Tableau de bord</text>
+              <rect x="68" y="44" width="58" height="32" rx="4" fill="#1a1d2e"/>
+              <text x="74" y="57" font-size="6" fill="#9898b0">Produits</text>
+              <text x="74" y="70" font-size="12" fill="#c9a84c" font-weight="bold">248</text>
+              <rect x="134" y="44" width="64" height="32" rx="4" fill="#1a1d2e"/>
+              <text x="140" y="57" font-size="6" fill="#9898b0">Ventes / mois</text>
+              <text x="140" y="70" font-size="12" fill="#e8c87a" font-weight="bold">1.2M</text>
+              <rect x="68" y="84" width="130" height="10" rx="2" fill="#1e2134"/>
+              <text x="72" y="92" font-size="6" fill="#5a5a72">Produit · Qté · Prix · Action</text>
+              <rect x="68" y="98" width="130" height="8" rx="1" fill="#181b2a"/>
+              <rect x="68" y="110" width="130" height="8" rx="1" fill="#1e2134"/>
+              <rect x="68" y="122" width="130" height="8" rx="1" fill="#181b2a"/>
+              <rect x="68" y="134" width="130" height="8" rx="1" fill="#1e2134"/>
+              <rect x="68" y="146" width="130" height="8" rx="1" fill="#181b2a"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-number">Projet 03</div>
+              <h3 class="project-title">Gestion PME — Application Web Fullstack</h3>
+              <p class="project-desc">
+                <strong>Problème :</strong> Les petites entreprises ont besoin d'un outil simple pour gérer stocks, ventes et clients sans logiciels coûteux.<br/><br/>
+                <strong>Solution :</strong> Une application web complète avec authentification, tableau de bord, gestion des produits, ventes et utilisateurs, connectée à MySQL.
+              </p>
+              <div class="project-tech">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Sessions</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/boubacarthiam005" target="_blank" rel="noopener noreferrer" class="project-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                Voir sur GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projet 4 -->
+        <article class="project-card reveal" aria-label="Page de Documentation Technique">
+          <div class="project-visual project-visual-4" aria-hidden="true">
+            <svg class="project-mockup" viewBox="0 0 220 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="200" height="150" rx="8" fill="#160e09" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+              <rect x="10" y="10" width="200" height="22" rx="8" fill="#1a1008"/>
+              <rect x="14" y="17" width="40" height="8" rx="2" fill="#c9a84c" opacity="0.7"/>
+              <rect x="140" y="17" width="28" height="8" rx="2" fill="#2a1e12"/>
+              <rect x="172" y="17" width="28" height="8" rx="2" fill="#2a1e12"/>
+              <rect x="10" y="32" width="55" height="128" rx="0" fill="#130d07"/>
+              <text x="16" y="47" font-size="6" fill="#c9a84c">Table des matières</text>
+              <rect x="16" y="52" width="40" height="5" rx="1" fill="#2a1e12"/>
+              <rect x="16" y="62" width="35" height="5" rx="1" fill="#2a1e12"/>
+              <rect x="16" y="72" width="38" height="5" rx="1" fill="#c9a84c" opacity="0.5"/>
+              <rect x="16" y="82" width="30" height="5" rx="1" fill="#2a1e12"/>
+              <rect x="72" y="36" width="128" height="10" rx="2" fill="#1e1409"/>
+              <text x="76" y="44" font-size="8" fill="#e8c87a" font-weight="bold">Introduction</text>
+              <rect x="72" y="52" width="128" height="5" rx="1" fill="#1e1409"/>
+              <rect x="72" y="62" width="110" height="5" rx="1" fill="#1e1409"/>
+              <rect x="72" y="86" width="128" height="34" rx="4" fill="#0d0803"/>
+              <rect x="72" y="86" width="128" height="8" rx="4" fill="#1a1008"/>
+              <text x="76" y="93" font-size="5" fill="#9898b0">exemple.html</text>
+              <text x="76" y="106" font-size="6" fill="#c9a84c" font-family="monospace">&lt;section class="doc"&gt;</text>
+              <text x="76" y="115" font-size="6" fill="#e8e8f0" font-family="monospace">  &lt;p&gt;Contenu...&lt;/p&gt;</text>
+            </svg>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-number">Projet 04</div>
+              <h3 class="project-title">Page de Documentation Technique</h3>
+              <p class="project-desc">
+                <strong>Problème :</strong> Présenter une documentation lisible, navigable et professionnelle sans framework lourd.<br/><br/>
+                <strong>Solution :</strong> Une page de documentation statique en HTML/CSS pur, avec navigation latérale fixe, table des matières et blocs de code stylisés — responsive sur tous les appareils.
+              </p>
+              <div class="project-tech">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Flexbox</span>
+                <span class="tag">Responsive</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/boubacarthiam005" target="_blank" rel="noopener noreferrer" class="project-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                Voir sur GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ==============================
+       CONTACT
+  ============================== -->
+  <section class="section" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Travaillons <span>ensemble</span></h2>
+      <p class="section-desc">Une mission, un stage, une question ? Écrivez-moi, je serai ravi d'échanger.</p>
+
+      <div class="contact-wrapper">
+
+        <div class="contact-info reveal">
+          <h3 class="contact-info-title">Prenons contact</h3>
+          <p class="contact-info-desc">
+            Je suis disponible pour des opportunités de stage, de freelance ou d'emploi.
+            Contactez-moi directement par email ou via mes réseaux professionnels.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:boubacarthiam005@icloud.com" class="contact-link-item" aria-label="Email">
+              <div class="contact-link-icon" aria-hidden="true">✉️</div>
+              <div>
+                <span class="contact-link-label">Email</span>
+                <span class="contact-link-value">boubacarthiam005@icloud.com</span>
+              </div>
+            </a>
+            <a href="http://www.linkedin.com/in/boubacar-thiam-4041a0391" target="_blank" rel="noopener noreferrer" class="contact-link-item" aria-label="LinkedIn">
+              <div class="contact-link-icon" aria-hidden="true">💼</div>
+              <div>
+                <span class="contact-link-label">LinkedIn</span>
+                <span class="contact-link-value">Boubacar Thiam</span>
+              </div>
+            </a>
+            <a href="https://github.com/boubacarthiam005" target="_blank" rel="noopener noreferrer" class="contact-link-item" aria-label="GitHub">
+              <div class="contact-link-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div>
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-value">github.com/boubacarthiam005</span>
+              </div>
+            </a>
+            <div class="contact-link-item" style="cursor:default;">
+              <div class="contact-link-icon" aria-hidden="true">📍</div>
+              <div>
+                <span class="contact-link-label">Localisation</span>
+                <span class="contact-link-value">Sénégal — Remote friendly</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="reveal">
+          <form class="contact-form" id="contactForm" novalidate aria-label="Formulaire de contact">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Prénom</label>
+                <input type="text" id="fname" name="fname" placeholder="Jean" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Nom</label>
+                <input type="text" id="lname" name="lname" placeholder="Dupont" required autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jean@entreprise.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" placeholder="Proposition de stage / Mission freelance..." required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre besoin..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+              Envoyer le message
+            </button>
+            <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+              ✅ Message envoyé ! Je vous répondrai dans les meilleurs délais.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner container">
+      <div class="footer-logo">BT<span>.</span></div>
+      <p class="footer-copy">&copy; 2025 <span>Boubacar Thiam</span> — Développeur Web Junior · Sénégal</p>
+      <div class="footer-social" aria-label="Réseaux sociaux">
+        <a href="http://www.linkedin.com/in/boubacar-thiam-4041a0391" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/boubacarthiam005" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="mailto:boubacarthiam005@icloud.com" aria-label="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts JS -->
+  <script src="js/nav.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/skills.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/spotlight.js"></script>
+
+</body>
+</html>
